@@ -34,4 +34,11 @@ rosbuild_add_library(rgbd_graph_segmentation
   src/segment.cpp
   src/wrapper.cpp)
 
-rosb
+rosbuild_add_compile_flags(rgbd_graph_segmentation
+    -Wall 
+    -Wextra 
+    -Werror
+    -Wno-unknown-pragmas 
+    -Wno-deprecated-declarations
+    -std=c++0x
+    -Wno-u
