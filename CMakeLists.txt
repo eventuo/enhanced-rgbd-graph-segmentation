@@ -41,4 +41,6 @@ rosbuild_add_compile_flags(rgbd_graph_segmentation
     -Wno-unknown-pragmas 
     -Wno-deprecated-declarations
     -std=c++0x
-    -Wno-u
+    -Wno-unused-function
+    -Wno-invalid-offsetof)
+
