@@ -3,4 +3,9 @@
 Extension of Felzenszwalb's graph-based segmentation algorithm to use depth information.
   </description>
   <author>Bhaskara Marthi</author>
- 
+  <license>GPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rgbd_graph_segmentation</url>
+
+  <depend package="image_geometry"/>
+  <dep
