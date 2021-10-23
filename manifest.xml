@@ -15,4 +15,9 @@ Extension of Felzenszwalb's graph-based segmentation algorithm to use depth info
 
   <export>
     <cpp
-        cflags="-I${pre
+        cflags="-I${prefix}/include"
+        lflags="-L${prefix}/lib -lrgbd_graph_segmentation"/>
+  </export>
+</package>
+
+
