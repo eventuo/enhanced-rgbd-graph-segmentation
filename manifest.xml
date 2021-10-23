@@ -1,3 +1,6 @@
 <package>
   <description brief="rgbd_graph_segmentation">
-Extensio
+Extension of Felzenszwalb's graph-based segmentation algorithm to use depth information.
+  </description>
+  <author>Bhaskara Marthi</author>
+ 
