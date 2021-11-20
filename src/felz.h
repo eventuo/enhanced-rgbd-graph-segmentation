@@ -40,3 +40,14 @@
 #define MEGAWORLDMODEL_RECOGNIZERS_FELZ_H
 
 #include "image.h"
+
+namespace felzenszwalb
+{
+
+struct rgbd
+{
+  rgbd(int r=0, int g=0, int b=0, float d=0.0) :
+    r(r), g(g), b(b), d(d)
+  {}
+
+  int
