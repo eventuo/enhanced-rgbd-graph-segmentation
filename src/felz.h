@@ -50,4 +50,9 @@ struct rgbd
     r(r), g(g), b(b), d(d)
   {}
 
-  int
+  int r, g, b;
+  float d;
+};
+
+image<int>* segment_image(image<rgbd> *im, float sigma, float c, int min_size,
+                          float depth_threshold, i
