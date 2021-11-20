@@ -31,4 +31,12 @@
 /**
  * \file 
  * 
- * Internally used shar
+ * Internally used shared defs
+ *
+ * \author Bhaskara Marthi
+ */
+
+#ifndef MEGAWORLDMODEL_RECOGNIZERS_FELZ_H
+#define MEGAWORLDMODEL_RECOGNIZERS_FELZ_H
+
+#include "image.h"
