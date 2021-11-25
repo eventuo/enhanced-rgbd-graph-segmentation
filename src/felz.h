@@ -55,4 +55,11 @@ struct rgbd
 };
 
 image<int>* segment_image(image<rgbd> *im, float sigma, float c, int min_size,
-                          float depth_threshold, i
+                          float depth_threshold, int *num_ccs);
+
+typedef image<rgbd> Img;
+
+
+} // namespace
+
+#endif // include guard
