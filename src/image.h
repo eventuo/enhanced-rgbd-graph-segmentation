@@ -99,3 +99,8 @@ image<T> *image<T>::copy() const {
   memcpy(im->data, data, w * h * sizeof(T));
   return im;
 }
+
+} // namespace
+
+#endif
+  
