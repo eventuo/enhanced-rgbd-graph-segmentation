@@ -26,4 +26,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 #include "imutil.h"
 #include "misc.h"
 
-namespace fe
+namespace felzenszwalb {
+
+
+#define	RED_WEIGHT	0.299
+#define GREEN_WEIGHT	0.587
+#define BLUE_WEIGHT	0.114
+
+static image<uchar> *imageRGBtoGRAY(image<rgb> *input) {
+ 
