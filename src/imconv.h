@@ -42,4 +42,12 @@ static image<uchar> *imageRGBtoGRAY(image<rgb> *input) {
     for (int x = 0; x < width; x++) {
       imRef(output, x, y) = (uchar)
 	(imRef(input, x, y).r * RED_WEIGHT +
-	 imRef(input, x, y
+	 imRef(input, x, y).g * GREEN_WEIGHT +
+	 imRef(input, x, y).b * BLUE_WEIGHT);
+    }
+  }
+  return output;
+}
+
+static image<rgb> *imageGRAYtoRGB(image<uchar> *input) {
+  int width = inp
