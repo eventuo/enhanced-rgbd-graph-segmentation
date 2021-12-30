@@ -50,4 +50,9 @@ static image<uchar> *imageRGBtoGRAY(image<rgb> *input) {
 }
 
 static image<rgb> *imageGRAYtoRGB(image<uchar> *input) {
-  int width = inp
+  int width = input->width();
+  int height = input->height();
+  image<rgb> *output = new image<rgb>(width, height, false);
+
+  for (int y = 0; y < height; y++) {
+ 
