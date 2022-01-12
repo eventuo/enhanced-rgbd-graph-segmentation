@@ -75,3 +75,9 @@ static image<float> *imageUCHARtoFLOAT(image<uchar> *input) {
     }
   }
   return output;  
+}
+
+static image<float> *imageINTtoFLOAT(image<int> *input) {
+  int width = input->width();
+  int height = input->height();
+  image<float> *
