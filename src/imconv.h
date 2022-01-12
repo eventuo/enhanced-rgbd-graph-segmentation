@@ -69,4 +69,9 @@ static image<float> *imageUCHARtoFLOAT(image<uchar> *input) {
   int height = input->height();
   image<float> *output = new image<float>(width, height, false);
 
-  fo
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      imRef(output, x, y) = imRef(input, x, y);
+    }
+  }
+  return output;  
