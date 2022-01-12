@@ -65,4 +65,8 @@ static image<rgb> *imageGRAYtoRGB(image<uchar> *input) {
 }
 
 static image<float> *imageUCHARtoFLOAT(image<uchar> *input) {
-  int wi
+  int width = input->width();
+  int height = input->height();
+  image<float> *output = new image<float>(width, height, false);
+
+  fo
