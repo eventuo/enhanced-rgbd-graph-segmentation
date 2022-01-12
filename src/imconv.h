@@ -58,4 +58,11 @@ static image<rgb> *imageGRAYtoRGB(image<uchar> *input) {
     for (int x = 0; x < width; x++) {
       imRef(output, x, y).r = imRef(input, x, y);
       imRef(output, x, y).g = imRef(input, x, y);
-      imRef(ou
+      imRef(output, x, y).b = imRef(input, x, y);
+    }
+  }
+  return output;  
+}
+
+static image<float> *imageUCHARtoFLOAT(image<uchar> *input) {
+  int wi
