@@ -92,4 +92,9 @@ static image<float> *imageINTtoFLOAT(image<int> *input) {
 
 static image<uchar> *imageFLOATtoUCHAR(image<float> *input, 
 				       float min, float max) {
-  int 
+  int width = input->width();
+  int height = input->height();
+  image<uchar> *output = new image<uchar>(width, height, false);
+
+  if (max == min)
+    return ou
