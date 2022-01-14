@@ -84,4 +84,12 @@ static image<float> *imageINTtoFLOAT(image<int> *input) {
 
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      imRef(output, x, y)
+      imRef(output, x, y) = imRef(input, x, y);
+    }
+  }
+  return output;  
+}
+
+static image<uchar> *imageFLOATtoUCHAR(image<float> *input, 
+				       float min, float max) {
+  int 
