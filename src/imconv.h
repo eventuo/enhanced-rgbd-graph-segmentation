@@ -108,3 +108,8 @@ static image<uchar> *imageFLOATtoUCHAR(image<float> *input,
   }
   return output;
 }
+
+static image<uchar> *imageFLOATtoUCHAR(image<float> *input) {
+  float min, max;
+  min_max(input, &min, &max);
+  return imageFLOATtoUCH
