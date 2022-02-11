@@ -97,4 +97,9 @@ static image<uchar> *imageFLOATtoUCHAR(image<float> *input,
   image<uchar> *output = new image<uchar>(width, height, false);
 
   if (max == min)
-    return ou
+    return output;
+
+  float scale = UCHAR_MAX / (max - min);
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      ucha
