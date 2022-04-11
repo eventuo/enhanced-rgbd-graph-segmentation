@@ -112,4 +112,9 @@ static image<uchar> *imageFLOATtoUCHAR(image<float> *input,
 static image<uchar> *imageFLOATtoUCHAR(image<float> *input) {
   float min, max;
   min_max(input, &min, &max);
-  return imageFLOATtoUCH
+  return imageFLOATtoUCHAR(input, min, max);
+}
+
+static image<long> *imageUCHARtoLONG(image<uchar> *input) {
+  int width = input->width();
+  int height = input-
