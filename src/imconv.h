@@ -122,4 +122,11 @@ static image<long> *imageUCHARtoLONG(image<uchar> *input) {
 
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      imRef
+      imRef(output, x, y) = imRef(input, x, y);
+    }
+  }
+  return output;  
+}
+
+static image<uchar> *imageLONGtoUCHAR(image<long> *input, long min, long max) {
+  int width 
