@@ -146,4 +146,10 @@ static image<uchar> *imageLONGtoUCHAR(image<long> *input, long min, long max) {
   return output;
 }
 
-static image<uchar> *
+static image<uchar> *imageLONGtoUCHAR(image<long> *input) {
+  long min, max;
+  min_max(input, &min, &max);
+  return imageLONGtoUCHAR(input, min, max);
+}
+
+static image<uchar> *imageSH
