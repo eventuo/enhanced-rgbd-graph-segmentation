@@ -152,4 +152,8 @@ static image<uchar> *imageLONGtoUCHAR(image<long> *input) {
   return imageLONGtoUCHAR(input, min, max);
 }
 
-static image<uchar> *imageSH
+static image<uchar> *imageSHORTtoUCHAR(image<short> *input, 
+					short min, short max) {
+  int width = input->width();
+  int height = input->height();
+  image
