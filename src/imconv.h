@@ -178,4 +178,4 @@ static image<uchar> *imageSHORTtoUCHAR(image<short> *input) {
 }
 
 }
-#
+#endif
