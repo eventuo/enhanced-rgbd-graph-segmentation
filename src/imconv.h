@@ -161,4 +161,7 @@ static image<uchar> *imageSHORTtoUCHAR(image<short> *input,
   if (max == min)
     return output;
 
-  float scale = UCHAR_MAX / (float)(max - min
+  float scale = UCHAR_MAX / (float)(max - min);
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      uchar val = (uchar)((imRef(input, x, y) - min) * scale);
