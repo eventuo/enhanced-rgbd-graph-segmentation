@@ -156,4 +156,9 @@ static image<uchar> *imageSHORTtoUCHAR(image<short> *input,
 					short min, short max) {
   int width = input->width();
   int height = input->height();
-  image
+  image<uchar> *output = new image<uchar>(width, height, false);
+
+  if (max == min)
+    return output;
+
+  float scale = UCHAR_MAX / (float)(max - min
