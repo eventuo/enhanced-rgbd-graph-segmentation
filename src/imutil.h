@@ -29,4 +29,9 @@ namespace felzenszwalb {
 template <class T>
 void min_max(image<T> *im, T *ret_min, T *ret_max) {
   int width = im->width();
-  int height
+  int height = im->height();
+  
+  T min = imRef(im, 0, 0);
+  T max = imRef(im, 0, 0);
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
