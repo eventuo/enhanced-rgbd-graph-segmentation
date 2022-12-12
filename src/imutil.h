@@ -51,4 +51,8 @@ void min_max(image<T> *im, T *ret_min, T *ret_max) {
 template <class T>
 image<uchar> *threshold(image<T> *src, int t) {
   int width = src->width();
-  int height = sr
+  int height = src->height();
+  image<uchar> *dst = new image<uchar>(width, height);
+  
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < wi
