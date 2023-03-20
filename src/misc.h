@@ -32,4 +32,9 @@ typedef unsigned char uchar;
 
 typedef struct { uchar r, g, b; } rgb;
 
-inline bool operat
+inline bool operator==(const rgb &a, const rgb &b) {
+  return ((a.r == b.r) && (a.g == b.g) && (a.b == b.b));
+}
+
+template <class T>
+inline T abs(const T &x) { retu
