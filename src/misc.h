@@ -22,4 +22,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 #define MISC_H
 
 #include <cmath>
-namespace 
+namespace felzenszwalb {
+
+#ifndef M_PI
+#define M_PI 3.141592653589793
+#endif
+
+typedef unsigned char uchar;
+
+typedef struct { uchar r, g, b; } rgb;
+
+inline bool operat
