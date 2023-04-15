@@ -43,4 +43,11 @@ template <class T>
 inline int sign(const T &x) { return (x >= 0 ? 1 : -1); };
 
 template <class T>
-inline T square(const T &x) {
+inline T square(const T &x) { return x*x; };
+
+template <class T>
+inline T bound(const T &x, const T &min, const T &max) {
+  return (x < min ? min : (x > max ? max : x));
+}
+
+tem
