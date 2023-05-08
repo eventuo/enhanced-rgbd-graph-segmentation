@@ -50,4 +50,9 @@ inline T bound(const T &x, const T &min, const T &max) {
   return (x < min ? min : (x > max ? max : x));
 }
 
-tem
+template <class T>
+inline bool check_bound(const T &x, const T&min, const T &max) {
+  return ((x < min) || (x > max));
+}
+
+inline int vlib_round(flo
