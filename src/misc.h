@@ -55,4 +55,9 @@ inline bool check_bound(const T &x, const T&min, const T &max) {
   return ((x < min) || (x > max));
 }
 
-inline int vlib_round(flo
+inline int vlib_round(float x) { return (int)(x + 0.5F); }
+
+inline int vlib_round(double x) { return (int)(x + 0.5); }
+
+inline double gaussian(double val, double sigma) {
+  return ex
