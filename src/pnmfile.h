@@ -30,3 +30,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 
 namespace felzenszwalb {
 
+
+#define BUF_SIZE 256
+
+class pnm_error { };
+
+static void read_packed(unsigned char *data, int size, std::ifstream &f) {
+  unsigned char c = 0;
+  
+  int bitshi
