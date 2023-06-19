@@ -19,4 +19,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
 /* basic image I/O */
 
 #ifndef PNM_FILE_H
-#define PNM_F
+#define PNM_FILE_H
+
+#include <cstdlib>
+#include <climits>
+#include <cstring>
+#include <fstream>
+#include "image.h"
+#include "misc.h"
+
+namespace felzenszwalb {
+
