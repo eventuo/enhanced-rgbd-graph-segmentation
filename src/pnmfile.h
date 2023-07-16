@@ -69,3 +69,12 @@ static void pnm_read(std::ifstream &file, char *buf) {
   char doc[BUF_SIZE];
   char c;
   
+  file >> c;
+  while (c == '#') {
+    file.getline(doc, BUF_SIZE);
+    file >> c;
+  }
+  file.putback(c);
+  
+  file.width(BUF_SIZE);
+  file >> buf
