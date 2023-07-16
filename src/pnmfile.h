@@ -58,3 +58,14 @@ static void write_packed(unsigned char *data, int size, std::ofstream &f) {
       bitshift--;
       if ((bitshift == -1) || (pos == size-1)) {
 	f.put(c);
+	bitshift = 7;
+	c = 0;
+      }
+  }
+}
+
+/* read PNM field, skipping comments */ 
+static void pnm_read(std::ifstream &file, char *buf) {
+  char doc[BUF_SIZE];
+  char c;
+  
