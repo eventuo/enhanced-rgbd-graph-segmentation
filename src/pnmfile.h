@@ -44,4 +44,12 @@ static void read_packed(unsigned char *data, int size, std::ifstream &f) {
       c = f.get();
       bitshift = 7;
     }
-    data[pos] = (c >> bi
+    data[pos] = (c >> bitshift) & 1;
+    bitshift--;
+    }
+}
+
+static void write_packed(unsigned char *data, int size, std::ofstream &f) {
+  unsigned char c = 0;
+  
+  int bitshift
