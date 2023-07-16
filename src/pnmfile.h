@@ -77,4 +77,12 @@ static void pnm_read(std::ifstream &file, char *buf) {
   file.putback(c);
   
   file.width(BUF_SIZE);
-  file >> buf
+  file >> buf;
+  file.ignore();
+}
+
+static image<uchar> *loadPBM(const char *name) {
+  char buf[BUF_SIZE];
+  
+  /* read header */
+  std::ifst
