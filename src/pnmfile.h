@@ -96,4 +96,11 @@ static image<uchar> *loadPBM(const char *name) {
   int height = atoi(buf);
   
   /* read data */
-  image<uchar> *im = new image<uchar>(
+  image<uchar> *im = new image<uchar>(width, height);
+  for (int i = 0; i < height; i++)
+    read_packed(imPtr(im, 0, i), width, file);
+  
+  return im;
+}
+
+static void savePBM(image<uchar> *im, con
