@@ -111,3 +111,11 @@ static void savePBM(image<uchar> *im, const char *name) {
   file << "P4\n" << width << " " << height << "\n";
   for (int i = 0; i < height; i++)
     write_packed(imPtr(im, 0, i), width, file);
+}
+
+static image<uchar> *loadPGM(const char *name) {
+  char buf[BUF_SIZE];
+  
+  /* read header */
+  std::ifstream file(name, std::ios::in | std::ios::binary);
+  pnm_read(fil
