@@ -107,3 +107,7 @@ static void savePBM(image<uchar> *im, const char *name) {
   int width = im->width();
   int height = im->height();
   std::ofstream file(name, std::ios::out | std::ios::binary);
+
+  file << "P4\n" << width << " " << height << "\n";
+  for (int i = 0; i < height; i++)
+    write_packed(imPtr(im, 0, i), width, file);
