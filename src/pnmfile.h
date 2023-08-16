@@ -118,4 +118,11 @@ static image<uchar> *loadPGM(const char *name) {
   
   /* read header */
   std::ifstream file(name, std::ios::in | std::ios::binary);
-  pnm_read(fil
+  pnm_read(file, buf);
+  if (strncmp(buf, "P5", 2))
+    throw pnm_error();
+
+  pnm_read(file, buf);
+  int width = atoi(buf);
+  pnm_read(file, buf);
+  int h
