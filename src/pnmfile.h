@@ -141,4 +141,7 @@ static image<uchar> *loadPGM(const char *name) {
 static void savePGM(image<uchar> *im, const char *name) {
   int width = im->width();
   int height = im->height();
-  std::ofstream file(name, std::ios:
+  std::ofstream file(name, std::ios::out | std::ios::binary);
+
+  file << "P5\n" << width << " " << height << "\n" << UCHAR_MAX << "\n";
+  file.write((char *)imPtr(im, 0, 0), width * height * si
