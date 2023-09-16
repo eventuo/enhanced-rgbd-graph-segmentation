@@ -151,4 +151,11 @@ static image<rgb> *loadPPM(const char *name) {
   char buf[BUF_SIZE];
   
   /* read header */
-  std::ifstream file(name, std::ios::in | std::i
+  std::ifstream file(name, std::ios::in | std::ios::binary);
+  pnm_read(file, buf);
+  if (strncmp(buf, "P6", 2))
+    throw pnm_error();
+
+  pnm_read(file, buf);
+  int width = atoi(buf);
+  pnm_read(fil
