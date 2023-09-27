@@ -166,4 +166,10 @@ static image<rgb> *loadPPM(const char *name) {
     throw pnm_error();
 
   /* read data */
-  ima
+  image<rgb> *im = new image<rgb>(width, height);
+  file.read((char *)imPtr(im, 0, 0), width * height * sizeof(rgb));
+
+  return im;
+}
+
+static void savePPM(image<rgb> *im, co
