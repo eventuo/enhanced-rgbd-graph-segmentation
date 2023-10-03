@@ -181,4 +181,9 @@ static void savePPM(image<rgb> *im, const char *name) {
   file.write((char *)imPtr(im, 0, 0), width * height * sizeof(rgb));
 }
 
-tem
+template <class T>
+void load_image(image<T> **im, const char *name) {
+  char buf[BUF_SIZE];
+  
+  /* read header */
+  std::ifstream file(name, std::ios::in | std::io
