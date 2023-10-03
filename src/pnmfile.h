@@ -192,4 +192,10 @@ void load_image(image<T> **im, const char *name) {
     throw pnm_error();
 
   pnm_read(file, buf);
-  int width = atoi(buf
+  int width = atoi(buf);
+  pnm_read(file, buf);
+  int height = atoi(buf);
+
+  /* read data */
+  *im = new image<T>(width, height);
+  file.read((char *)imPtr((*im), 0, 0), width *
