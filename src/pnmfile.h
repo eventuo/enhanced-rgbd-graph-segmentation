@@ -186,4 +186,10 @@ void load_image(image<T> **im, const char *name) {
   char buf[BUF_SIZE];
   
   /* read header */
-  std::ifstream file(name, std::ios::in | std::io
+  std::ifstream file(name, std::ios::in | std::ios::binary);
+  pnm_read(file, buf);
+  if (strncmp(buf, "VLIB", 9))
+    throw pnm_error();
+
+  pnm_read(file, buf);
+  int width = atoi(buf
