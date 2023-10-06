@@ -198,4 +198,11 @@ void load_image(image<T> **im, const char *name) {
 
   /* read data */
   *im = new image<T>(width, height);
-  file.read((char *)imPtr((*im), 0, 0), width *
+  file.read((char *)imPtr((*im), 0, 0), width * height * sizeof(T));
+}
+
+template <class T>
+void save_image(image<T> *im, const char *name) {
+  int width = im->width();
+  int height = im->height();
+  std::ofstr
