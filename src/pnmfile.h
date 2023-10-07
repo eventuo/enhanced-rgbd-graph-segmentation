@@ -205,4 +205,7 @@ template <class T>
 void save_image(image<T> *im, const char *name) {
   int width = im->width();
   int height = im->height();
-  std::ofstr
+  std::ofstream file(name, std::ios::out | std::ios::binary);
+
+  file << "VLIB\n" << width << " " << height << "\n";
+  file.write((char *)imPtr(im, 0, 0)
