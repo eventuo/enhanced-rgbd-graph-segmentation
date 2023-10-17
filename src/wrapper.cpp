@@ -10,4 +10,17 @@
 #include <map>
 #include <ros/assert.h>
 #include "stl_tools.h"
-#include "fe
+#include "felz.h"
+
+using std::vector;
+using std::pair;
+using std::map;
+using std::set;
+using std::cerr;
+
+
+
+namespace rgbd_graph_segmentation
+{
+
+namespace 
