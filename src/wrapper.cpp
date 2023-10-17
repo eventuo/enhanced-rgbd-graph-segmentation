@@ -23,4 +23,9 @@ using std::cerr;
 namespace rgbd_graph_segmentation
 {
 
-namespace 
+namespace sm=sensor_msgs;
+namespace f=felzenszwalb;
+
+typedef boost::shared_ptr<f::Img> ImgPtr;
+typedef cv::Mat_<cv::Vec3b> RgbImage;
+typedef 
