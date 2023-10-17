@@ -28,4 +28,7 @@ namespace f=felzenszwalb;
 
 typedef boost::shared_ptr<f::Img> ImgPtr;
 typedef cv::Mat_<cv::Vec3b> RgbImage;
-typedef 
+typedef cv::Mat_<float> DepthImage;
+typedef std::map<Pixel, uint32_t> PixelMap;
+typedef vector<Pixel> Segment;
+typedef map<uint32_t, Segment> Segm
