@@ -38,4 +38,7 @@ typedef map<uint32_t, Segment> SegmentMap;
 Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
   segments_(boost::extents[image.rows][image.cols]), image_(image)
 {
-  for 
+  for (const PixelMap::value_type& e : segs)
+  {
+    // Add mapping from pixel to segment
+    segments_[e.first.first][e.first.second] = 
