@@ -35,4 +35,7 @@ typedef map<uint32_t, Segment> SegmentMap;
 
 // Constructor for segmentation object just sets up the reverse mapping from
 // segment id to pixel list
-Segmentation::Segm
+Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
+  segments_(boost::extents[image.rows][image.cols]), image_(image)
+{
+  for 
