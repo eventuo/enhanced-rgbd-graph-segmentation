@@ -31,4 +31,8 @@ typedef cv::Mat_<cv::Vec3b> RgbImage;
 typedef cv::Mat_<float> DepthImage;
 typedef std::map<Pixel, uint32_t> PixelMap;
 typedef vector<Pixel> Segment;
-typedef map<uint32_t, Segment> Segm
+typedef map<uint32_t, Segment> SegmentMap;
+
+// Constructor for segmentation object just sets up the reverse mapping from
+// segment id to pixel list
+Segmentation::Segm
