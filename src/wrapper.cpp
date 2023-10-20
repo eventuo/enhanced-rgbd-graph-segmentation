@@ -41,4 +41,8 @@ Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
   for (const PixelMap::value_type& e : segs)
   {
     // Add mapping from pixel to segment
-    segments_[e.first.first][e.first.second] = 
+    segments_[e.first.first][e.first.second] = e.second;
+    
+    // Add reverse mapping from segment id to pixel
+    pixels_[e.second].push_back(e.first); // Creates map entry if doesn't exist
+    segmen
