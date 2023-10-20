@@ -45,4 +45,9 @@ Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
     
     // Add reverse mapping from segment id to pixel
     pixels_[e.second].push_back(e.first); // Creates map entry if doesn't exist
-    segmen
+    segment_ids_.insert(e.second);
+  }
+}
+
+// Constructor for segmentation object just sets up the reverse mapping from
+// segment id to
