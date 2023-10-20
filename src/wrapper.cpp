@@ -50,4 +50,8 @@ Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
 }
 
 // Constructor for segmentation object just sets up the reverse mapping from
-// segment id to
+// segment id to pixel list
+Segmentation::Segmentation (const RgbImage& image, const array_type& segs) :
+  segments_(segs), image_(image)
+{
+  fo
