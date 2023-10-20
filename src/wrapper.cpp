@@ -54,4 +54,9 @@ Segmentation::Segmentation (const RgbImage& image, const PixelMap& segs) :
 Segmentation::Segmentation (const RgbImage& image, const array_type& segs) :
   segments_(segs), image_(image)
 {
-  fo
+  for (int r=0; r<image_.rows; r++)
+  {
+    for (int c=0; c<image_.cols; c++)
+    {
+      const uint32_t seg = segs[r][c];
+      pixels
