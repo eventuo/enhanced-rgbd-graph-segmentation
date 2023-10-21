@@ -77,4 +77,8 @@ cv::Vec3b randomColor ()
 }
 
 // An assignment of colors to segment ids used for drawing borders
-// Attem
+// Attempts to make the colors visually distinct
+cv::Vec3b colorOfSegment (const uint32_t t)
+{
+  static map<uint32_t, cv::Vec3b> colors;
+  static unsigned 
