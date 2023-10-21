@@ -59,4 +59,15 @@ Segmentation::Segmentation (const RgbImage& image, const array_type& segs) :
     for (int c=0; c<image_.cols; c++)
     {
       const uint32_t seg = segs[r][c];
-      pixels
+      pixels_[seg].push_back(Pixel(r, c));
+      segment_ids_.insert(seg);
+    }
+  }
+}
+
+
+// Random color
+cv::Vec3b randomColor ()
+{
+  cv::Vec3b v;
+  v
