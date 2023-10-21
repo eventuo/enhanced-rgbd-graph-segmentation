@@ -70,4 +70,11 @@ Segmentation::Segmentation (const RgbImage& image, const array_type& segs) :
 cv::Vec3b randomColor ()
 {
   cv::Vec3b v;
-  v
+  v[0] = rand() % 256;
+  v[1] = rand() % 256;
+  v[2] = rand() % 256;
+  return v;
+}
+
+// An assignment of colors to segment ids used for drawing borders
+// Attem
