@@ -81,4 +81,11 @@ cv::Vec3b randomColor ()
 cv::Vec3b colorOfSegment (const uint32_t t)
 {
   static map<uint32_t, cv::Vec3b> colors;
-  static unsigned 
+  static unsigned r=0, g=100, b=200;
+  if (!contains(colors, t))
+  {
+    cv::Vec3b color;
+    color[0] = b; 
+    color[1] = g;
+    color[2] = r;
+    colors[t] = color;
