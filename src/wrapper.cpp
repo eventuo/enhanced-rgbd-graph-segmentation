@@ -89,3 +89,12 @@ cv::Vec3b colorOfSegment (const uint32_t t)
     color[1] = g;
     color[2] = r;
     colors[t] = color;
+
+    r = (r+91)%256;
+    g = (g+51)%256;
+    b = (b+71)%256;
+  }
+  return colors[t];
+}
+
+// Average rgb value in a given segment
