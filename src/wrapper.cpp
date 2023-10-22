@@ -98,3 +98,10 @@ cv::Vec3b colorOfSegment (const uint32_t t)
 }
 
 // Average rgb value in a given segment
+cv::Vec3b
+Segmentation::segmentAverageColor (const size_t i) const
+{
+  int r=0, g=0, b=0;
+  const Segment& seg = pixels(i);
+  const size_t n = seg.size();
+ 
