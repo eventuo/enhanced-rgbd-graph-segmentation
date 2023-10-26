@@ -104,4 +104,7 @@ Segmentation::segmentAverageColor (const size_t i) const
   int r=0, g=0, b=0;
   const Segment& seg = pixels(i);
   const size_t n = seg.size();
- 
+  BOOST_FOREACH (const Pixel& p, seg)
+  {
+    const cv::Vec3b& color = image_(p.first, p.second);
+    r += color[2]
