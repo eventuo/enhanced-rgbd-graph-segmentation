@@ -128,4 +128,11 @@ Pixel Segmentation::center (const uint32_t i) const
   {
     r += p.first;
     c += p.second;
- 
+  }
+  return Pixel(r/pix.size(), c/pix.size());
+}
+
+
+// Return new image in which the border of each segment is highlighted a
+// different color
+RgbIma
