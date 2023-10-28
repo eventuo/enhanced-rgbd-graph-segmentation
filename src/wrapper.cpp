@@ -119,4 +119,13 @@ Segmentation::segmentAverageColor (const size_t i) const
 }
 
 // Central pixel of a segment
-Pixel Segmentation::center (const uint32_t i) cons
+Pixel Segmentation::center (const uint32_t i) const
+{
+  double r=0, c=0;
+  const vector<Pixel>& pix = pixels(i);
+  ROS_ASSERT(pix.size()>0);
+  for (const Pixel& p : pix)
+  {
+    r += p.first;
+    c += p.second;
+ 
