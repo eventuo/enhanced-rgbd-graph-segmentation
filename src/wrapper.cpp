@@ -113,4 +113,10 @@ Segmentation::segmentAverageColor (const size_t i) const
   }
   cv::Vec3b avg;
   avg[2] = static_cast<float>(r)/n;
-  avg[1] = static_cast<float>(g)/
+  avg[1] = static_cast<float>(g)/n;
+  avg[0] = static_cast<float>(b)/n;
+  return avg;
+}
+
+// Central pixel of a segment
+Pixel Segmentation::center (const uint32_t i) cons
