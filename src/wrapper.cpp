@@ -135,4 +135,8 @@ Pixel Segmentation::center (const uint32_t i) const
 
 // Return new image in which the border of each segment is highlighted a
 // different color
-RgbIma
+RgbImage Segmentation::segmentationImage () const
+{
+  const uint32_t dummy_segment = -1;
+  map<uint32_t, cv::Vec3b> colors;
+  for (c
