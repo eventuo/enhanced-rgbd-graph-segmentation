@@ -145,4 +145,13 @@ RgbImage Segmentation::segmentationImage () const
       colors[i] = segmentAverageColor(i);
   }
   
-  RgbImage img(image_.ro
+  RgbImage img(image_.rows, image_.cols);
+  cv::Vec3b orange;
+  orange[2] = 255;
+  orange[1] = 165;
+  
+  for (int r=0; r<image_.rows; r++)
+  {
+    for (int c=0; c<image_.cols; c++)
+    {
+      co
