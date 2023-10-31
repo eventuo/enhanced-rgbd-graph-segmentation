@@ -139,4 +139,10 @@ RgbImage Segmentation::segmentationImage () const
 {
   const uint32_t dummy_segment = -1;
   map<uint32_t, cv::Vec3b> colors;
-  for (c
+  for (const uint32_t i : segment_ids_) 
+  {
+    if (i != dummy_segment)
+      colors[i] = segmentAverageColor(i);
+  }
+  
+  RgbImage img(image_.ro
