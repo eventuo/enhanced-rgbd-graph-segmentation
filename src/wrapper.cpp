@@ -166,3 +166,8 @@ RgbImage Segmentation::segmentationImage () const
         {
           if (c2<0 || c2>=image_.cols)
             continue;
+          if (segmentContaining(Pixel(r2, c2))!=seg)
+            is_border = true;
+        }
+      }
+      if (seg==dummy_segment || 
