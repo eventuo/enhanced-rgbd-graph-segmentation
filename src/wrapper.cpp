@@ -157,4 +157,8 @@ RgbImage Segmentation::segmentationImage () const
       const uint32_t seg = segmentContaining(Pixel(r, c));
       const size_t n = pixels(seg).size();
       bool is_border = false;
-      const int thick
+      const int thickness = 3;
+      for (int r2=r-thickness; r2<=r+thickness && !is_border; r2++)
+      {
+        if (r2<0 || r2>=image_.rows)
+          continue;
