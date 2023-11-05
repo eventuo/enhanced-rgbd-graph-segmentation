@@ -154,4 +154,7 @@ RgbImage Segmentation::segmentationImage () const
   {
     for (int c=0; c<image_.cols; c++)
     {
-      co
+      const uint32_t seg = segmentContaining(Pixel(r, c));
+      const size_t n = pixels(seg).size();
+      bool is_border = false;
+      const int thick
