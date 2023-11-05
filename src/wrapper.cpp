@@ -162,3 +162,7 @@ RgbImage Segmentation::segmentationImage () const
       {
         if (r2<0 || r2>=image_.rows)
           continue;
+        for (int c2=c-thickness; c2<=c+thickness && !is_border; c2++)
+        {
+          if (c2<0 || c2>=image_.cols)
+            continue;
