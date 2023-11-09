@@ -175,4 +175,11 @@ RgbImage Segmentation::segmentationImage () const
       else if (is_border)
         img(r, c) = colorOfSegment(seg);
       else
-        im
+        img(r, c) = image_(r, c); //colors.at(seg);
+    }
+  }
+
+  for (const uint32_t i : segment_ids_)
+  {
+    if (i==dummy_segment)
+      continue;
