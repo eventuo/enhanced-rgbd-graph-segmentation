@@ -170,4 +170,9 @@ RgbImage Segmentation::segmentationImage () const
             is_border = true;
         }
       }
-      if (seg==dummy_segment || 
+      if (seg==dummy_segment || n<100)
+        img(r, c) = image_(r, c);
+      else if (is_border)
+        img(r, c) = colorOfSegment(seg);
+      else
+        im
