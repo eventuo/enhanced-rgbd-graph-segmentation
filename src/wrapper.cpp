@@ -183,3 +183,8 @@ RgbImage Segmentation::segmentationImage () const
   {
     if (i==dummy_segment)
       continue;
+    const vector<Pixel>& pix = pixels(i);
+    if (pix.size()<500)
+      continue;
+    Pixel p = center(i);
+    for (int r=p.firs
