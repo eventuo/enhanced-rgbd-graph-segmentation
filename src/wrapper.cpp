@@ -187,4 +187,8 @@ RgbImage Segmentation::segmentationImage () const
     if (pix.size()<500)
       continue;
     Pixel p = center(i);
-    for (int r=p.firs
+    for (int r=p.first-2; r<=p.first+2; r++)
+    {
+      for (int c=p.second-2; c<=p.second+2; c++)
+      {
+        if (r<0 || r>=image_.rows || c<0 || c>=image
