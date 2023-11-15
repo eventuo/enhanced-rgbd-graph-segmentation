@@ -208,4 +208,14 @@ RgbImage Segmentation::image() const
   return image_;
 }
 
-const set<uint32_t> Segmentation::segmen
+const set<uint32_t> Segmentation::segmentIds () const
+{
+  return segment_ids_;
+}
+
+
+const vector<Pixel>& Segmentation::pixels (const uint32_t i) const
+{
+  return keyValue(pixels_, i);
+}
+
