@@ -202,4 +202,10 @@ RgbImage Segmentation::segmentationImage () const
   return img;
 }
 
-// Return original image (note shares struc
+// Return original image (note shares structure despite the const marking)
+RgbImage Segmentation::image() const
+{
+  return image_;
+}
+
+const set<uint32_t> Segmentation::segmen
