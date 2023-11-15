@@ -191,4 +191,15 @@ RgbImage Segmentation::segmentationImage () const
     {
       for (int c=p.second-2; c<=p.second+2; c++)
       {
-        if (r<0 || r>=image_.rows || c<0 || c>=image
+        if (r<0 || r>=image_.rows || c<0 || c>=image_.cols)
+          continue;
+        img(r, c) = orange;
+      }
+    }
+  }
+
+  
+  return img;
+}
+
+// Return original image (note shares struc
