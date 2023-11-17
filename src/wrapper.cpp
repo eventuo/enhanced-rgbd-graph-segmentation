@@ -230,4 +230,7 @@ ImgPtr convert (const RgbImage& image, const DepthImage& depth)
   {
     for (int c=0; c<image.cols; c++)
     {
-     
+      const cv::Vec3b& bgr = image(r, c);
+      imRef(res_ptr, c, r).b = bgr[0];
+      imRef(res_ptr, c, r).g = bgr[1];
+      imRef(res_ptr, c, r).r = bgr[2
