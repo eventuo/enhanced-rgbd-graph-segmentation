@@ -224,4 +224,10 @@ const vector<Pixel>& Segmentation::pixels (const uint32_t i) const
 // Convert from ROS to Felzenszwalb representation
 ImgPtr convert (const RgbImage& image, const DepthImage& depth)
 {
-  ImgPtr res(new f::Img(ima
+  ImgPtr res(new f::Img(image.cols, image.rows));
+  f::Img* res_ptr = res.get();
+  for (int r=0; r<image.rows; r++)
+  {
+    for (int c=0; c<image.cols; c++)
+    {
+     
