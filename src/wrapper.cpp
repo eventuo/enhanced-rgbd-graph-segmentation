@@ -241,4 +241,6 @@ ImgPtr convert (const RgbImage& image, const DepthImage& depth)
 }
 
 Segmentation segment (const RgbImage& image,
-                  
+                      const DepthImage& depth_image,
+                      const float k, const unsigned min_size,
+                      const float depth_threshol
