@@ -243,4 +243,8 @@ ImgPtr convert (const RgbImage& image, const DepthImage& depth)
 Segmentation segment (const RgbImage& image,
                       const DepthImage& depth_image,
                       const float k, const unsigned min_size,
-                      const float depth_threshol
+                      const float depth_threshold,
+                      const float sigma)
+{
+  ROS_DEBUG_NAMED("felzenszwalb", "Converting image");
+  ROS_ASSERT_MSG(image.rows==depth_image.row
