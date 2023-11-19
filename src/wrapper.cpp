@@ -233,4 +233,12 @@ ImgPtr convert (const RgbImage& image, const DepthImage& depth)
       const cv::Vec3b& bgr = image(r, c);
       imRef(res_ptr, c, r).b = bgr[0];
       imRef(res_ptr, c, r).g = bgr[1];
-      imRef(res_ptr, c, r).r = bgr[2
+      imRef(res_ptr, c, r).r = bgr[2];
+      imRef(res_ptr, c, r).d = depth(r, c);
+    }
+  }
+  return res;
+}
+
+Segmentation segment (const RgbImage& image,
+                  
