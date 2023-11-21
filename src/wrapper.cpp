@@ -249,4 +249,7 @@ Segmentation segment (const RgbImage& image,
   ROS_DEBUG_NAMED("felzenszwalb", "Converting image");
   ROS_ASSERT_MSG(image.rows==depth_image.rows && image.cols==depth_image.cols,
                  "Image dims (%d, %d) different from depth image dims (%d, %d)",
-                 
+                 image.rows, image.cols, depth_image.rows, depth_image.cols);
+  ImgPtr img = convert(image, depth_image);
+  int num_comps;
+  ROS_DEBUG_NAM
