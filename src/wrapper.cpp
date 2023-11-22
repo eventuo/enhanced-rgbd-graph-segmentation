@@ -254,4 +254,6 @@ Segmentation segment (const RgbImage& image,
   int num_comps;
   ROS_DEBUG_NAMED("felzenszwalb", "Segmenting");
   boost::shared_ptr<f::image<int> > comps(segment_image(img.get(), sigma, k,
-                               
+                                                        min_size,
+                                                        depth_threshold,
+                                    
