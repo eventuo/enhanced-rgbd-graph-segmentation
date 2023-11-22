@@ -252,4 +252,6 @@ Segmentation segment (const RgbImage& image,
                  image.rows, image.cols, depth_image.rows, depth_image.cols);
   ImgPtr img = convert(image, depth_image);
   int num_comps;
-  ROS_DEBUG_NAM
+  ROS_DEBUG_NAMED("felzenszwalb", "Segmenting");
+  boost::shared_ptr<f::image<int> > comps(segment_image(img.get(), sigma, k,
+                               
