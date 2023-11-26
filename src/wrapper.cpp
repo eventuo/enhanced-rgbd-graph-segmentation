@@ -256,4 +256,7 @@ Segmentation segment (const RgbImage& image,
   boost::shared_ptr<f::image<int> > comps(segment_image(img.get(), sigma, k,
                                                         min_size,
                                                         depth_threshold,
-                                    
+                                                        &num_comps));
+  map<Pixel, uint32_t> res;
+  f::image<int>* comps_ptr = comps.get();
+  ROS_DEBUG_NAMED("felzenszwalb", "Converting segme
