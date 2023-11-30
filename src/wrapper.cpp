@@ -268,4 +268,8 @@ Segmentation segment (const RgbImage& image,
 
   ROS_DEBUG_NAMED("felzenszwalb", "Indexing segmentation");
   Segmentation s(image, res);
-  ROS_DEBUG_NAMED("felzenszwa
+  ROS_DEBUG_NAMED("felzenszwalb", "Segmentation complete");
+  return s;
+}
+
+} // namespace rgbd_graph_segmentation
