@@ -262,4 +262,10 @@ Segmentation segment (const RgbImage& image,
   ROS_DEBUG_NAMED("felzenszwalb", "Converting segmentation");
   for (int x=0; x<comps->width(); x++) {
     for (int y=0; y<comps->height(); y++) {
-      res[Pixel(y,x)] = imRef(comps
+      res[Pixel(y,x)] = imRef(comps_ptr, x, y);
+    }
+  }
+
+  ROS_DEBUG_NAMED("felzenszwalb", "Indexing segmentation");
+  Segmentation s(image, res);
+  ROS_DEBUG_NAMED("felzenszwa
