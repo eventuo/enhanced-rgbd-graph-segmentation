@@ -259,4 +259,7 @@ Segmentation segment (const RgbImage& image,
                                                         &num_comps));
   map<Pixel, uint32_t> res;
   f::image<int>* comps_ptr = comps.get();
-  ROS_DEBUG_NAMED("felzenszwalb", "Converting segme
+  ROS_DEBUG_NAMED("felzenszwalb", "Converting segmentation");
+  for (int x=0; x<comps->width(); x++) {
+    for (int y=0; y<comps->height(); y++) {
+      res[Pixel(y,x)] = imRef(comps
